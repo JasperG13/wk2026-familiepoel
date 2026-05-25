@@ -120,3 +120,34 @@ def build_export_payload(name, predictions, matches, extras=None):
             "score_uit":   pred.get("away"),
         }
     return json.dumps(payload, ensure_ascii=False, indent=2)
+
+def send_predictions_email(name, json_str):
+    """Send the predictions JSON as an attachment to the organizer."""
+    import smtplib, ssl
+    from email.message import EmailMessage
+    import streamlit as st
+
+    cfg = st.secrets["email"]
+
+    msg = EmailMessage()
+    msg["Subject"] = f"⚽ WK 2026 Voorspelling — {name}"
+    msg["From"] = cfg["sender"]
+    msg["To"] = cfg["recipient"]
+    msg.set_content(
+        f"Nieuwe voorspelling binnen!\n\n"
+        f"Naam: {name}\n\n"
+        f"De volledige voorspelling zit als JSON-bijlage."
+    )
+
+    safe_name = name.replace(" ", "_")
+    msg.add_attachment(
+        json_str.encode("utf-8"),
+        maintype="application",
+        subtype="json",
+        filename=f"voorspelling_{safe_name}.json",
+    )
+
+    context = ssl.create_default_context()
+    with smtplib.SMTP_SSL(cfg["smtp_host"], int(cfg["smtp_port"]), context=context) as smtp:
+        smtp.login(cfg["sender"], cfg["password"])
+        smtp.send_message(msg)

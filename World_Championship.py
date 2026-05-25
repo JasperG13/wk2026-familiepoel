@@ -4,6 +4,7 @@ import streamlit as st
 import pandas as pd
 from datetime import datetime, timezone
 from players import PLAYERS, POSITION_POINTS
+from utils import send_predictions_email
 
 from matches import (
     MATCHES, GROUP_COLORS, FLAG_CODES, UNDERDOG_TEAMS,
@@ -891,36 +892,56 @@ if name.strip() and not past_deadline:
         st.session_state["_last_encoded"] = encoded
         st.query_params["d"] = encoded
 
-col_save, col_export = st.columns(2)
+# ── Save, Export, Submit ─────────────────────────────────────────────────────
+col_save, col_export, col_submit = st.columns(3)
 
 with col_save:
     if not past_deadline:
-        if st.button("🔖 Sla op & vergrendel STAR-team", type="primary", use_container_width=True):
-            # Lock star team on explicit save (if a value is set)
-            if st.session_state.extras.get("star_team"):
-                st.session_state.star_locked = True
+        if st.button("🔖 Sla op", type="secondary", use_container_width=True):
             encoded = encode_predictions(name.strip(), current_preds, st.session_state.extras)
             st.query_params["d"] = encoded
-            st.success("✅ Opgeslagen! Bookmark de URL in je browser om later terug te komen.")
-            if st.session_state.star_locked:
-                st.info(f"🔒 STAR-team vergrendeld op **{st.session_state.extras['star_team']}**.")
-            st.info("📋 Kopieer de URL uit je adresbalk — dat is jouw persoonlijke link.")
+            st.success("✅ Opgeslagen! Bookmark de URL.")
     else:
         st.button("🔒 Deadline verstreken", disabled=True, use_container_width=True)
 
 with col_export:
     json_str = build_export_payload(name.strip(), current_preds, MATCHES, st.session_state.extras)
     st.download_button(
-        label="📤 Download voor organisator (.json)",
+        label="📤 Download (.json)",
         data=json_str,
         file_name=f"voorspelling_{name.strip().replace(' ', '_')}.json",
         mime="application/json",
         use_container_width=True,
     )
 
-if not past_deadline:
-    st.caption("💡 Gele knop = tussentijds opslaan via jouw persoonlijke link · Grijze knop = definitieve inzending naar de organisator sturen.")
+with col_submit:
+    already_sent = st.session_state.get("submitted", False)
+    if past_deadline:
+        st.button("🔒 Deadline verstreken", disabled=True, use_container_width=True, key="submit_locked")
+    elif already_sent:
+        st.button("✅ Reeds ingestuurd", disabled=True, use_container_width=True, key="submit_done")
+    else:
+        if st.button("📩 Definitief insturen", type="primary", use_container_width=True):
+            if filled < total:
+                st.error(f"⚠️ Vul eerst alle {total} wedstrijden in ({filled}/{total} ingevuld).")
+            else:
+                try:
+                    with st.spinner("Bezig met versturen..."):
+                        send_predictions_email(name.strip(), json_str)
+                    st.session_state["submitted"] = True
+                    st.success(f"🎉 Bedankt **{name.strip()}**! Je inzending is verstuurd naar de organisator.")
+                    st.balloons()
+                except Exception as e:
+                    st.error(f"❌ Versturen mislukt: {e}")
+                    st.info("Geen zorgen — gebruik de **Download (.json)** knop en stuur het bestand handmatig op.")
 
+if not past_deadline:
+    st.caption(
+        "💡 **Sla op** = tussentijds bewaren via URL · "
+        "**Download** = bestand voor jezelf · "
+        "**Definitief insturen** = mail naar de organisator (kan maar 1× per sessie)."
+    )
+    
 st.markdown("""
 <div class='footer'>
     WK 2026 Familiepoel · Gemaakt met <span class='heart'>♥</span> · Veel plezier en succes! ⚽🏆

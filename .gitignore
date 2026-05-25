@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+submissions/
+whatsapp_update.txt
+per_player.txt
+.venv/
+.env
+.DS_Store

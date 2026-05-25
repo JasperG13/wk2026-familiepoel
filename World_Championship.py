@@ -923,18 +923,19 @@ with col_submit:
     else:
         if st.button("📩 Definitief insturen", type="primary", use_container_width=True):
             if filled < total:
-                st.error(f"⚠️ Vul eerst alle {total} wedstrijden in ({filled}/{total} ingevuld).")
-            else:
-                try:
-                    with st.spinner("Bezig met versturen..."):
-                        send_predictions_email(name.strip(), json_str)
-                    st.session_state["submitted"] = True
-                    st.success(f"🎉 Bedankt **{name.strip()}**! Je inzending is verstuurd naar de organisator.")
-                    st.balloons()
-                except Exception as e:
-                    st.error(f"❌ Versturen mislukt: {e}")
-                    st.info("Geen zorgen — gebruik de **Download (.json)** knop en stuur het bestand handmatig op.")
-
+                # Warn but still allow
+                st.warning(f"⚠️ Je hebt pas {filled}/{total} wedstrijden ingevuld. "
+                           f"Je inzending wordt nu zo verstuurd. Je kan later opnieuw insturen om te updaten.")
+            try:
+                with st.spinner("Bezig met versturen..."):
+                    send_predictions_email(name.strip(), json_str)
+                st.session_state["submitted"] = True
+                st.success(f"🎉 Bedankt **{name.strip()}**! Je inzending is verstuurd naar de organisator.")
+                st.balloons()
+            except Exception as e:
+                st.error(f"❌ Versturen mislukt: {e}")
+                st.info("Geen zorgen — gebruik de **Download (.json)** knop en stuur het bestand handmatig op.")
+                
 if not past_deadline:
     st.caption(
         "💡 **Sla op** = tussentijds bewaren via URL · "

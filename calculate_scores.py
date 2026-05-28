@@ -12,20 +12,18 @@ SUBMISSIONS_DIR = "submissions"
 # ── Fill these in as the tournament progresses ────────────────────────────────
 ACTUAL_RESULTS = {
     # 1: (2, 1),
-    # 7: (0, 0),
 }
 
-# Final group standings: list teams in order [1st, 2nd, 3rd, 4th]
-# Leave a group out until it's fully decided.
 ACTUAL_GROUP_STANDINGS = {
     # "A": ["Mexico", "Zuid-Korea", "Tsjechië", "Zuid-Afrika"],
 }
 
-ACTUAL_CHAMPION = None  # e.g. "Brazilië"
+ACTUAL_CHAMPION = None
 
-# {(team, player): goals_in_group_stage}
+# Goals per player per match (group stage only)
+# Format: (team, player_name): {match_id: goals_in_that_match}
 GOALS_BY_PLAYER = {
-    # ("Brazilië", "Vinicius Jr."): 2,
+    # ("Brazilië", "Vinicius Jr."): {13: 1, 16: 2},
 }
 
 

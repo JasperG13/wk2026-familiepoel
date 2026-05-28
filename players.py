@@ -1,9 +1,9 @@
 # players.py – squads & position points
 
 POSITION_POINTS = {
-    "Aanvaller":     3,
-    "Middenvelder":  7,
-    "Verdediger":   12,
+    "Verdediger":   24,
+    "Middenvelder": 12,
+    "Aanvaller":     6,
 }
 
 # Each player: {"name": "...", "position": "Aanvaller" | "Middenvelder" | "Verdediger"}

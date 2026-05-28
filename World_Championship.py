@@ -733,7 +733,7 @@ if not isinstance(ts, list) or not all(isinstance(x, dict) for x in ts):
     extras["topscorers"] = [{"team": "", "name": ""} for _ in range(6)]
 
 # ── Jokers ────────────────────────────────────────────────────────────────────
-st.markdown("#### 🃏 Joker-wedstrijden (kies 4) — punten × 2")
+st.markdown("#### 🃏 Joker-wedstrijden (kies 4) — punten × 1.5")
 jokers = st.multiselect(
     "Joker matches",
     options=match_options,
@@ -746,7 +746,7 @@ jokers = st.multiselect(
 )
 
 # ── Casinos ───────────────────────────────────────────────────────────────────
-st.markdown("#### 🎰 Casino-wedstrijden (kies 4) — × 3 als goed, −5 als fout")
+st.markdown("#### 🎰 Casino-wedstrijden (kies 4) — × 2.5 als correct, −5 als fout (kan niet samen met Joker)")
 casinos = st.multiselect(
     "Casino matches",
     options=[mid for mid in match_options if mid not in jokers],
@@ -757,6 +757,11 @@ casinos = st.multiselect(
     label_visibility="collapsed",
     disabled=past_deadline,
 )
+
+overlap = set(jokers) & set(casinos)
+if overlap:
+    st.error("❌ Een wedstrijd kan niet tegelijk Joker én Casino zijn. "
+             "Pas een van beide aan.")
 
 # ── Star team & Underdog ──────────────────────────────────────────────────────
 col_star, col_under = st.columns(2)
@@ -769,7 +774,7 @@ with col_star:
                              disabled=past_deadline)
 
 with col_under:
-    st.markdown("#### 🐺 Underdog — +15 per zege, +10 per gelijkspel")
+    st.markdown("#### 🐺 Underdog — +30 per zege, +20 per gelijkspel")
     underdog_options = ["— kies team —"] + sorted(UNDERDOG_TEAMS)
     under_idx = underdog_options.index(extras["underdog"]) if extras["underdog"] in underdog_options else 0
     underdog = st.selectbox("Underdog", options=underdog_options, index=under_idx,
@@ -777,7 +782,7 @@ with col_under:
                             disabled=past_deadline)
 
 # ── Champion ──────────────────────────────────────────────────────────────────
-st.markdown("#### 🏆 Wereldkampioen — +200 als correct")
+st.markdown("#### 🏆 Wereldkampioen — +150 als correct")
 champ_options = ["— kies team —"] + all_teams
 champ_idx = champ_options.index(extras["champion"]) if extras["champion"] in champ_options else 0
 champion = st.selectbox("Champion", options=champ_options, index=champ_idx,
@@ -786,10 +791,13 @@ champion = st.selectbox("Champion", options=champ_options, index=champ_idx,
 
 # ── Top scorer picks (6 players) ──────────────────────────────────────────────
 st.markdown("#### ⚽ Topscorer-spelers (kies 6)")
-st.caption(f"Punten per doelpunt in de groepsfase — "
-           f"Aanvaller: {POSITION_POINTS['Aanvaller']} · "
-           f"Middenvelder: {POSITION_POINTS['Middenvelder']} · "
-           f"Verdediger: {POSITION_POINTS['Verdediger']}")
+st.caption(
+    f"Punten per doelpunt in de groepsfase — "
+    f"Verdediger: {POSITION_POINTS['Verdediger']} · "
+    f"Middenvelder: {POSITION_POINTS['Middenvelder']} · "
+    f"Aanvaller: {POSITION_POINTS['Aanvaller']}  ·  "
+    f"Multipliers van 🃏/🎰/⭐ wedstrijden tellen ook door op deze punten."
+)
 
 countries = ["— kies land —"] + sorted(PLAYERS.keys())
 new_topscorers = []

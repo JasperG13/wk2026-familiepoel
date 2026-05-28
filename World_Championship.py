@@ -24,9 +24,9 @@ st.set_page_config(
 DEADLINE = datetime(2026, 6, 10, 23, 59, 59, tzinfo=timezone.utc)
 MATCHES_BY_ID = {m["id"]: m for m in MATCHES}
 
-JOKER_LIMIT  = 7
-CASINO_LIMIT = 5
-TOPSCORER_SLOTS = 3
+JOKER_LIMIT  = 4
+CASINO_LIMIT = 4
+TOPSCORER_SLOTS = 6
 
 def is_past_deadline():
     return datetime.now(timezone.utc) > DEADLINE
@@ -535,13 +535,13 @@ kun je in het uitleg bestand kijken!
 - Juiste winnaar / gelijkspel: **5 punt**
 
 **Bonusvoorspellingen**
-- 🃏 7× Joker-wedstrijd → punten voor die wedstrijd ×1.5
-- 🎰 5× Casino-wedstrijd → ×2.5 als goed, −3 als fout (juiste winnaar / gelijkspel, niet exacte uitslag) 
+- 🃏 4× Joker-wedstrijd → punten voor die wedstrijd ×1.5
+- 🎰 4× Casino-wedstrijd → ×2.5 als goed, −5 als fout (juiste winnaar / gelijkspel, niet exacte uitslag)
 - ⭐ 1× STAR-team → ×2.5 op alle correcte voorspellingen met dit team
 - 🐴 1× Underdog → +5 per gewonnen wedstrijd, +3 voor gelijk
 - 🥅 +1 per team dat je correct bij de top-2 van de groep voorspelt
 - 🥇 Wereldkampioen: +30 als correct
-- ⚽ 3× Topscorer-kans: +15 als één van je namen klopt
+- ⚽ 6× Topscorer-kans: punten per doelpunt (positieafhankelijk)
 
 Veel succes en plezier! ⚽
 """

@@ -729,7 +729,6 @@ PLAYERS = {
         {"name": "Fábio Silva",         "position": "Aanvaller"},
         {"name": "Fábio Carvalho",      "position": "Aanvaller"},
     ],
-    "Jamaica":            [],  # nog niet bekend (play-off winnaar, nu DR Congo)
     "Oezbekistan":        [],  # nog niet bekend
     "Colombia":           [],  # verwacht 29 mei
 

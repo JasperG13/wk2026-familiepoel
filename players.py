@@ -16,7 +16,34 @@ POSITION_POINTS = {
 PLAYERS = {
     # ===================== GROEP A =====================
     "Mexico":             [],  # verwacht 1 juni
-    "Zuid-Afrika":        [],  # verwacht 27 mei
+    "Zuid-Afrika": [
+        # Verdedigers
+        {"name": "Khuliso Mudau",          "position": "Verdediger"},
+        {"name": "Nkosinathi Sibisi",       "position": "Verdediger"},
+        {"name": "Ime Okon",               "position": "Verdediger"},
+        {"name": "Khulumani Ndamane",      "position": "Verdediger"},
+        {"name": "Aubrey Modiba",          "position": "Verdediger"},
+        {"name": "Samukele Kabini",        "position": "Verdediger"},
+        {"name": "Thabang Matuludi",       "position": "Verdediger"},
+        {"name": "Olwethu Makhanya",       "position": "Verdediger"},
+        {"name": "Kamogelo Sebelebele",    "position": "Verdediger"},
+        {"name": "Bradley Cross",          "position": "Verdediger"},
+        {"name": "Mbekezeli Mbokazi",      "position": "Verdediger"},
+        # Middenvelders
+        {"name": "Teboho Mokoena",         "position": "Middenvelder"},
+        {"name": "Thalente Mbatha",        "position": "Middenvelder"},
+        {"name": "Sphephelo Sithole",      "position": "Middenvelder"},
+        {"name": "Jayden Adams",           "position": "Middenvelder"},
+        # Aanvallers
+        {"name": "Oswin Appollis",         "position": "Aanvaller"},
+        {"name": "Iqraam Rayners",         "position": "Aanvaller"},
+        {"name": "Tshepang Moremi",        "position": "Aanvaller"},
+        {"name": "Relebohile Mofokeng",    "position": "Aanvaller"},
+        {"name": "Evidence Makgopa",       "position": "Aanvaller"},
+        {"name": "Themba Zwane",           "position": "Aanvaller"},
+        {"name": "Lyle Foster",            "position": "Aanvaller"},
+        {"name": "Thapelo Maseko",         "position": "Aanvaller"},
+    ],
     "Zuid-Korea": [
         # Verdedigers
         {"name": "Kim Min-jae",       "position": "Verdediger"},
@@ -79,7 +106,34 @@ PLAYERS = {
     ],
 
     # ===================== GROEP B =====================
-    "Canada":             [],  # verwacht 29 mei
+    "Canada": [
+        # Verdedigers
+        {"name": "Moïse Bombito",          "position": "Verdediger"},
+        {"name": "Derek Cornelius",        "position": "Verdediger"},
+        {"name": "Alphonso Davies",        "position": "Verdediger"},
+        {"name": "Luc de Fougerolles",     "position": "Verdediger"},
+        {"name": "Alistair Johnston",      "position": "Verdediger"},
+        {"name": "Alfie Jones",            "position": "Verdediger"},
+        {"name": "Richie Laryea",          "position": "Verdediger"},
+        {"name": "Niko Sigur",             "position": "Verdediger"},
+        {"name": "Joel Waterman",          "position": "Verdediger"},
+        # Middenvelders
+        {"name": "Ali Ahmed",              "position": "Middenvelder"},
+        {"name": "Tajon Buchanan",         "position": "Middenvelder"},
+        {"name": "Mathieu Choinière",      "position": "Middenvelder"},
+        {"name": "Stephen Eustáquio",      "position": "Middenvelder"},
+        {"name": "Marcelo Flores",         "position": "Middenvelder"},
+        {"name": "Ismaël Koné",            "position": "Middenvelder"},
+        {"name": "Liam Millar",            "position": "Middenvelder"},
+        {"name": "Jonathan Osorio",        "position": "Middenvelder"},
+        {"name": "Nathan Saliba",          "position": "Middenvelder"},
+        {"name": "Jacob Shaffelburg",      "position": "Middenvelder"},
+        # Aanvallers
+        {"name": "Jonathan David",         "position": "Aanvaller"},
+        {"name": "Promise David",          "position": "Aanvaller"},
+        {"name": "Cyle Larin",             "position": "Aanvaller"},
+        {"name": "Tani Oluwaseyi",         "position": "Aanvaller"},
+    ],
     "Bosnië-Herzegovina": [
         # Verdedigers
         {"name": "Sead Kolasinac",       "position": "Verdediger"},
@@ -373,7 +427,34 @@ PLAYERS = {
     "Ecuador":            [],  # nog niet bekend
 
     # ===================== GROEP F =====================
-    "Nederland":          [],  # verwacht 27 mei (vandaag)
+    "Nederland": [
+        # Verdedigers
+        {"name": "Denzel Dumfries",        "position": "Verdediger"},
+        {"name": "Jurrien Timber",         "position": "Verdediger"},
+        {"name": "Virgil van Dijk",        "position": "Verdediger"},
+        {"name": "Micky van de Ven",       "position": "Verdediger"},
+        {"name": "Nathan Aké",             "position": "Verdediger"},
+        {"name": "Jorrel Hato",            "position": "Verdediger"},
+        {"name": "Jan Paul van Hecke",     "position": "Verdediger"},
+        # Middenvelders
+        {"name": "Ryan Gravenberch",       "position": "Middenvelder"},
+        {"name": "Frenkie de Jong",        "position": "Middenvelder"},
+        {"name": "Tijjani Reijnders",      "position": "Middenvelder"},
+        {"name": "Teun Koopmeiners",       "position": "Middenvelder"},
+        {"name": "Marten de Roon",         "position": "Middenvelder"},
+        {"name": "Guus Til",               "position": "Middenvelder"},
+        {"name": "Quinten Timber",         "position": "Middenvelder"},
+        {"name": "Mats Wieffer",           "position": "Middenvelder"},
+        # Aanvallers
+        {"name": "Donyell Malen",          "position": "Aanvaller"},
+        {"name": "Memphis Depay",          "position": "Aanvaller"},
+        {"name": "Cody Gakpo",             "position": "Aanvaller"},
+        {"name": "Wout Weghorst",          "position": "Aanvaller"},
+        {"name": "Justin Kluivert",        "position": "Aanvaller"},
+        {"name": "Brian Brobbey",          "position": "Aanvaller"},
+        {"name": "Crysencio Summerville",  "position": "Aanvaller"},
+        {"name": "Noa Lang",               "position": "Aanvaller"},
+    ],
     "Japan": [
         # Verdedigers
         {"name": "Yuto Nagatomo",       "position": "Verdediger"},
@@ -488,7 +569,34 @@ PLAYERS = {
         {"name": "Alexis Saelemaekers",  "position": "Aanvaller"},
         {"name": "Leandro Trossard",     "position": "Aanvaller"},
     ],
-    "Egypte":             [],  # nog niet bekend
+    "Egypte": [
+        # Verdedigers
+        {"name": "Mohamed Hany",           "position": "Verdediger"},
+        {"name": "Ramy Rabia",             "position": "Verdediger"},
+        {"name": "Yasser Ibrahim",         "position": "Verdediger"},
+        {"name": "Tarek Alaa",             "position": "Verdediger"},
+        {"name": "Mohamed Abdelmonem",     "position": "Verdediger"},
+        {"name": "Karim Hafez",            "position": "Verdediger"},
+        {"name": "Hossam Abdelmeguid",     "position": "Verdediger"},
+        {"name": "Ahmed Fatouh",           "position": "Verdediger"},
+        {"name": "Hamdy Fathy",            "position": "Verdediger"},
+        # Middenvelders
+        {"name": "Marwan Attia",           "position": "Middenvelder"},
+        {"name": "Mohanad Lasheen",        "position": "Middenvelder"},
+        {"name": "Mahmoud Saber",          "position": "Middenvelder"},
+        {"name": "Emam Ashour",            "position": "Middenvelder"},
+        {"name": "Ahmed Sayed Zizo",       "position": "Middenvelder"},
+        {"name": "Ibrahim Adel",           "position": "Middenvelder"},
+        {"name": "Mostafa Ziko",           "position": "Middenvelder"},
+        {"name": "Nabil Emad Donga",       "position": "Middenvelder"},
+        # Aanvallers
+        {"name": "Omar Marmoush",          "position": "Aanvaller"},
+        {"name": "Mahmoud Trézéguet",      "position": "Aanvaller"},
+        {"name": "Mohamed Salah",          "position": "Aanvaller"},
+        {"name": "Hamza Abdelkarim",       "position": "Aanvaller"},
+        {"name": "Aqtay Abdallah",         "position": "Aanvaller"},
+        {"name": "Haissem Hassen",         "position": "Aanvaller"},
+    ],
     "Iran":               [],  # nog niet bekend
     "Nieuw-Zeeland": [
         # Verdedigers
@@ -577,7 +685,34 @@ PLAYERS = {
         {"name": "Helio Varela",         "position": "Aanvaller"},
     ],
     "Saudi-Arabië":       [],  # nog niet bekend
-    "Uruguay":            [],  # nog niet bekend
+    "Uruguay": [
+        # Verdedigers
+        {"name": "Guillermo Varela",       "position": "Verdediger"},
+        {"name": "Sebastián Cáceres",      "position": "Verdediger"},
+        {"name": "Ronald Araujo",          "position": "Verdediger"},
+        {"name": "José María Giménez",     "position": "Verdediger"},
+        {"name": "Santiago Bueno",         "position": "Verdediger"},
+        {"name": "Mathías Olivera",        "position": "Verdediger"},
+        {"name": "Matías Viña",            "position": "Verdediger"},
+        {"name": "Joaquín Piquerez",       "position": "Verdediger"},
+        # Middenvelders
+        {"name": "Manuel Ugarte",          "position": "Middenvelder"},
+        {"name": "Emiliano Martínez",      "position": "Middenvelder"},
+        {"name": "Giorgian De Arrascaeta", "position": "Middenvelder"},
+        {"name": "Facundo Pellistri",      "position": "Middenvelder"},
+        {"name": "Maximiliano Araújo",     "position": "Middenvelder"},
+        {"name": "Nicolás De La Cruz",     "position": "Middenvelder"},
+        {"name": "Brian Rodríguez",        "position": "Middenvelder"},
+        {"name": "Agustín Canobbio",       "position": "Middenvelder"},
+        {"name": "Rodrigo Zalazar",        "position": "Middenvelder"},
+        {"name": "Rodrigo Bentancur",      "position": "Middenvelder"},
+        {"name": "Federico Valverde",      "position": "Middenvelder"},
+        {"name": "Juan Manuel Sanabria",   "position": "Middenvelder"},
+        # Aanvallers
+        {"name": "Rodrigo Aguirre",        "position": "Aanvaller"},
+        {"name": "Darwin Núñez",           "position": "Aanvaller"},
+        {"name": "Federico Viñas",         "position": "Aanvaller"},
+    ],
 
     # ===================== GROEP I =====================
     "Frankrijk": [
@@ -667,8 +802,61 @@ PLAYERS = {
     "Irak":               [],  # nog niet bekend
 
     # ===================== GROEP J =====================
-    "Argentinië":         [],  # verwacht 1 juni
-    "Algerije":           [],  # verwacht 1 juni
+    "Argentinië": [
+        # Verdedigers
+        {"name": "Leonardo Balerdi",       "position": "Verdediger"},
+        {"name": "Nicolás Tagliafico",     "position": "Verdediger"},
+        {"name": "Gonzalo Montiel",        "position": "Verdediger"},
+        {"name": "Lisandro Martinez",      "position": "Verdediger"},
+        {"name": "Cristian Romero",        "position": "Verdediger"},
+        {"name": "Nicolas Otamendi",       "position": "Verdediger"},
+        {"name": "Facundo Medina",         "position": "Verdediger"},
+        {"name": "Nahuel Molina",          "position": "Verdediger"},
+        # Middenvelders
+        {"name": "Leandro Paredes",        "position": "Middenvelder"},
+        {"name": "Rodrigo De Paul",        "position": "Middenvelder"},
+        {"name": "Valentin Barco",         "position": "Middenvelder"},
+        {"name": "Giovani Lo Celso",       "position": "Middenvelder"},
+        {"name": "Exequiel Palacios",      "position": "Middenvelder"},
+        {"name": "Alexis Mac Allister",    "position": "Middenvelder"},
+        {"name": "Enzo Fernandez",         "position": "Middenvelder"},
+        # Aanvallers
+        {"name": "Lionel Messi",           "position": "Aanvaller"},
+        {"name": "Julian Álvarez",         "position": "Aanvaller"},
+        {"name": "Nicolás González",       "position": "Aanvaller"},
+        {"name": "Thiago Almada",          "position": "Aanvaller"},
+        {"name": "Giuliano Simeone",       "position": "Aanvaller"},
+        {"name": "Nico Paz",               "position": "Aanvaller"},
+        {"name": "Lautaro Martinez",       "position": "Aanvaller"},
+    ],
+    "Algerije": [
+        # Verdedigers
+        {"name": "Rafik Belghali",         "position": "Verdediger"},
+        {"name": "Samir Chergui",          "position": "Verdediger"},
+        {"name": "Rayan Aït-Nouri",        "position": "Verdediger"},
+        {"name": "Jaouen Hadjam",          "position": "Verdediger"},
+        {"name": "Aissa Mandi",            "position": "Verdediger"},
+        {"name": "Ramy Bensebaini",        "position": "Verdediger"},
+        {"name": "Zineddine Belaid",       "position": "Verdediger"},
+        {"name": "Achraf Abada",           "position": "Verdediger"},
+        {"name": "Mohamed Amine Tougai",   "position": "Verdediger"},
+        # Middenvelders
+        {"name": "Nabil Bentaleb",         "position": "Middenvelder"},
+        {"name": "Hicham Boudaoui",        "position": "Middenvelder"},
+        {"name": "Houssem Aouar",          "position": "Middenvelder"},
+        {"name": "Fares Chaibi",           "position": "Middenvelder"},
+        {"name": "Ibrahim Maza",           "position": "Middenvelder"},
+        {"name": "Yacine Titraoui",        "position": "Middenvelder"},
+        {"name": "Ramiz Zerrouki",         "position": "Middenvelder"},
+        # Aanvallers
+        {"name": "Mohamed Amoura",         "position": "Aanvaller"},
+        {"name": "Nadir Benbouali",        "position": "Aanvaller"},
+        {"name": "Adil Boulbina",          "position": "Aanvaller"},
+        {"name": "Fares Ghedjemis",        "position": "Aanvaller"},
+        {"name": "Amine Gouiri",           "position": "Aanvaller"},
+        {"name": "Anis Hadj-Moussa",       "position": "Aanvaller"},
+        {"name": "Riyad Mahrez",           "position": "Aanvaller"},
+    ],
     "Oostenrijk": [
         # Verdedigers
         {"name": "David Affengruber",    "position": "Verdediger"},
@@ -730,7 +918,34 @@ PLAYERS = {
         {"name": "Fábio Carvalho",      "position": "Aanvaller"},
     ],
     "Oezbekistan":        [],  # nog niet bekend
-    "Colombia":           [],  # verwacht 29 mei
+    "Colombia": [
+        # Verdedigers
+        {"name": "Daniel Muñoz",           "position": "Verdediger"},
+        {"name": "Jhon Lucumí",            "position": "Verdediger"},
+        {"name": "Santiago Arias",         "position": "Verdediger"},
+        {"name": "Davinson Sánchez",       "position": "Verdediger"},
+        {"name": "Johan Mojica",           "position": "Verdediger"},
+        {"name": "Yerry Mina",             "position": "Verdediger"},
+        {"name": "Willer Ditta",           "position": "Verdediger"},
+        {"name": "Deiver Machado",         "position": "Verdediger"},
+        # Middenvelders
+        {"name": "Jorge Carrascal",        "position": "Middenvelder"},
+        {"name": "Kevin Castaño",          "position": "Middenvelder"},
+        {"name": "Gustavo Puerta",         "position": "Middenvelder"},
+        {"name": "Juan Fernando Quintero", "position": "Middenvelder"},
+        {"name": "Jefferson Lerma",        "position": "Middenvelder"},
+        {"name": "Richard Ríos",           "position": "Middenvelder"},
+        {"name": "Jhon Arias",             "position": "Middenvelder"},
+        {"name": "James Rodríguez",        "position": "Middenvelder"},
+        {"name": "Jaminton Campaz",        "position": "Middenvelder"},
+        {"name": "Juan Camilo Portilla",   "position": "Middenvelder"},
+        # Aanvallers
+        {"name": "Luis Díaz",              "position": "Aanvaller"},
+        {"name": "Jhon Córdoba",           "position": "Aanvaller"},
+        {"name": "Luis Suárez",            "position": "Aanvaller"},
+        {"name": "Juan Camilo Hernandez",  "position": "Aanvaller"},
+        {"name": "Carlos Andres Gomez",    "position": "Aanvaller"},
+    ],
 
     # ===================== GROEP L =====================
     "Engeland": [
@@ -789,7 +1004,34 @@ PLAYERS = {
         {"name": "Marko Pjaca",         "position": "Aanvaller"},
         {"name": "Bruno Petkovic",      "position": "Aanvaller"},
     ],
-    "Ghana":              [],  # nog niet bekend
+    "Ghana": [
+        # Verdedigers
+        {"name": "Baba Abdul Rahman",      "position": "Verdediger"},
+        {"name": "Gideon Mensah",          "position": "Verdediger"},
+        {"name": "Marvin Senaya",          "position": "Verdediger"},
+        {"name": "Alidu Seidu",            "position": "Verdediger"},
+        {"name": "Abdul Mumin",            "position": "Verdediger"},
+        {"name": "Jerome Opoku",           "position": "Verdediger"},
+        {"name": "Jonas Adjetey",          "position": "Verdediger"},
+        {"name": "Kojo Oppong Peprah",     "position": "Verdediger"},
+        {"name": "Alexander Djiku",        "position": "Verdediger"},
+        {"name": "Elisha Owusu",           "position": "Verdediger"},
+        # Middenvelders
+        {"name": "Thomas Partey",          "position": "Middenvelder"},
+        {"name": "Kwasi Sibo",             "position": "Middenvelder"},
+        {"name": "Augustine Boakye",       "position": "Middenvelder"},
+        {"name": "Caleb Yirenkyi",         "position": "Middenvelder"},
+        {"name": "Abdul Fatawu Issahaku",  "position": "Middenvelder"},
+        {"name": "Kamal Deen Sulemana",    "position": "Middenvelder"},
+        {"name": "Christopher Bonsu Baah", "position": "Middenvelder"},
+        {"name": "Ernest Nuamah",          "position": "Middenvelder"},
+        {"name": "Brandon Thomas-Asante",  "position": "Middenvelder"},
+        # Aanvallers
+        {"name": "Antoine Semenyo",        "position": "Aanvaller"},
+        {"name": "Prince Kwabena Adu",     "position": "Aanvaller"},
+        {"name": "Iñaki Williams",         "position": "Aanvaller"},
+        {"name": "Jordan Ayew",            "position": "Aanvaller"},
+    ],
     "Panama": [
         # Verdedigers
         {"name": "Fidel Escobar",       "position": "Verdediger"},

@@ -3,8 +3,6 @@
 import base64
 import gzip
 import json
-from datetime import datetime, timezone
-
 from matches import FLAG_CODES
 
 EXTRAS_KEYS = ("champion", "topscorers", "jokers", "casinos", "star_team", "underdog")
@@ -65,7 +63,7 @@ def decode_predictions(raw):
     # Migrate old single 'topscorer' → list of 3
     if "topscorer" in extras and "topscorers" not in extras:
         old = extras.pop("topscorer", "") or ""
-        extras["topscorers"] = [old, "", ""]
+        extras["topscorers"] = [{"team": "", "name": old}] + [{"team": "", "name": ""} for _ in range(5)]
 
     # Fill in defaults so downstream code never KeyErrors
     defaults = _default_extras()
@@ -74,8 +72,8 @@ def decode_predictions(raw):
 
     # Sanitize types
     if not isinstance(extras.get("topscorers"), list):
-        extras["topscorers"] = ["", "", ""]
-    extras["topscorers"] = (extras["topscorers"] + ["", "", ""])[:3]
+        extras["topscorers"] = [{"team": "", "name": ""} for _ in range(6)]
+    extras["topscorers"] = (extras["topscorers"] + [{"team": "", "name": ""} for _ in range(6)])[:6]
 
     if not isinstance(extras.get("jokers"), list):
         extras["jokers"] = []
@@ -90,7 +88,7 @@ def decode_predictions(raw):
 def _default_extras():
     return {
         "champion":   "",
-        "topscorers": ["", "", ""],
+        "topscorers": [{"team": "", "name": ""} for _ in range(6)],
         "jokers":     [],
         "casinos":    [],
         "star_team":  "",

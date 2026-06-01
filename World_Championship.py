@@ -34,10 +34,6 @@ def is_past_deadline():
 def deadline_str():
     return DEADLINE.strftime("%d %B %Y om %H:%M").lstrip("0")
 
-def match_label(mid):
-    m = MATCHES_BY_ID[mid]
-    return f"#{mid:02d} · {m['home']} – {m['away']} · {m['date']} (Groep {m['group']})"
-
 
 # ── CSS / Design ───────────────────────────────────────────────────────────────
 st.markdown("""
@@ -411,7 +407,7 @@ if "_init_done" not in st.session_state:
 def _default_extras():
     return {
         "champion":   "",
-        "topscorers": ["", "", ""],
+        "topscorers": [{"team": "", "name": ""} for _ in range(6)],
         "jokers":     [],
         "casinos":    [],
         "star_team":  "",
@@ -422,17 +418,13 @@ if "extras" not in st.session_state:
     base = _default_extras()
     if saved_extras:
         base.update({k: v for k, v in saved_extras.items() if v is not None})
-        # make sure topscorers always 3 long
+        # make sure topscorers always 6 long
         ts = list(base.get("topscorers") or [])
-        base["topscorers"] = (ts + ["", "", ""])[:3]
+        base["topscorers"] = (ts + [{"team": "", "name": ""} for _ in range(6)])[:6]
     st.session_state.extras = base
 
 if "loaded_name" not in st.session_state:
     st.session_state.loaded_name = saved_name
-
-# Star-team lock: if previously saved, lock it permanently for this session
-if "star_locked" not in st.session_state:
-    st.session_state.star_locked = bool(saved_extras.get("star_team"))
 
 
 # ── Helpers ──────────────────────────────────────────────────────────────────
@@ -475,7 +467,7 @@ st.markdown("""
     <h1>WK 2026 Familiepoel</h1>
     <p class='hero-sub'>
         🇺🇸 <strong>USA</strong> &nbsp;·&nbsp; 🇨🇦 <strong>Canada</strong> &nbsp;·&nbsp; 🇲🇽 <strong>Mexico</strong>
-        &nbsp;&nbsp;|&nbsp;&nbsp; 11 juni – 27 juni 2026
+        &nbsp;&nbsp;|&nbsp;&nbsp; 11 juni – 19 juli 2026
     </p>
 </div>
 """, unsafe_allow_html=True)
@@ -536,7 +528,7 @@ kun je in het uitleg bestand kijken!
 
 **Bonusvoorspellingen**
 - 🃏 4× Joker-wedstrijd → punten voor die wedstrijd ×1.5
-- 🎰 4× Casino-wedstrijd → ×2.5 als goed, −5 als fout (juiste winnaar / gelijkspel, niet exacte uitslag)
+- 🎰 4× Casino-wedstrijd → ×2.5 als goed, −5 als fout
 - ⭐ 1× STAR-team → ×2 op alle correcte voorspellingen met dit team
 - 🐺 1× Underdog → +30 per gewonnen wedstrijd, +20 voor gelijk
 - 🥅 +2 per team dat je correct bij de top-2 van de groep voorspelt
@@ -717,7 +709,7 @@ st.markdown("## 🎮 Power-ups & Bonusvoorspellingen")
 all_teams = sorted(set(m["home"] for m in MATCHES) | set(m["away"] for m in MATCHES))
 match_options = [m["id"] for m in MATCHES]
 def match_label(mid):
-    m = next(x for x in MATCHES if x["id"] == mid)
+    m = MATCHES_BY_ID[mid]
     return f"{m['date']} · {m['home']} vs {m['away']} (Gr. {m['group']})"
 
 # Initialise extras keys

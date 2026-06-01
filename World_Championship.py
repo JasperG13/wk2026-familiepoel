@@ -531,16 +531,16 @@ Ook zijn er bonuspunten te verdienen. De scoring daarvan staat een stukje verder
 kun je in het uitleg bestand kijken!
 
 **Punten voor wedstrijden**
-- Exacte uitslag: **10 punten**
-- Juiste winnaar / gelijkspel: **5 punt**
+- Exacte uitslag: 15 punten
+- Juiste winnaar / gelijkspel: 10 punten
 
 **Bonusvoorspellingen**
 - 🃏 4× Joker-wedstrijd → punten voor die wedstrijd ×1.5
 - 🎰 4× Casino-wedstrijd → ×2.5 als goed, −5 als fout (juiste winnaar / gelijkspel, niet exacte uitslag)
-- ⭐ 1× STAR-team → ×2.5 op alle correcte voorspellingen met dit team
-- 🐴 1× Underdog → +5 per gewonnen wedstrijd, +3 voor gelijk
-- 🥅 +1 per team dat je correct bij de top-2 van de groep voorspelt
-- 🥇 Wereldkampioen: +30 als correct
+- ⭐ 1× STAR-team → ×2 op alle correcte voorspellingen met dit team
+- 🐺 1× Underdog → +30 per gewonnen wedstrijd, +20 voor gelijk
+- 🥅 +2 per team dat je correct bij de top-2 van de groep voorspelt
+- 🥇 Wereldkampioen: +150 als correct
 - ⚽ 6× Topscorer-kans: punten per doelpunt (positieafhankelijk)
 
 Veel succes en plezier! ⚽
@@ -858,9 +858,9 @@ st.markdown(f"""
 🃏 Jokers: <strong>{len(ex_now['jokers'])}/{JOKER_LIMIT}</strong> &nbsp;·&nbsp;
 🎰 Casino: <strong>{len(ex_now['casinos'])}/{CASINO_LIMIT}</strong> &nbsp;·&nbsp;
 ⭐ STAR: <strong>{ex_now['star_team'] or '—'}</strong> &nbsp;·&nbsp;
-🐴 Underdog: <strong>{ex_now['underdog'] or '—'}</strong> &nbsp;·&nbsp;
+🐺 Underdog: <strong>{ex_now['underdog'] or '—'}</strong> &nbsp;·&nbsp;
 🥇 Kampioen: <strong>{ex_now['champion'] or '—'}</strong> &nbsp;·&nbsp;
-⚽ Topscorers: <strong>{sum(1 for t in ex_now['topscorers'] if t) }/{TOPSCORER_SLOTS}</strong>
+⚽ Topscorers: <strong>{sum(1 for t in ex_now['topscorers'] if t.get('name')) }/{TOPSCORER_SLOTS}</strong>
 </div>
 """, unsafe_allow_html=True)
 

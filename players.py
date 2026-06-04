@@ -100,7 +100,6 @@ PLAYERS = {
         {"name": "Cho Gue-sung",      "position": "Aanvaller"},
     ],
     "Tsjechië": [
-        # Voorlopig – er moeten nog 3 spelers afvallen
         # Verdedigers
         {"name": "Vladimír Coufal",     "position": "Verdediger"},
         {"name": "David Douděra",       "position": "Verdediger"},
@@ -112,10 +111,8 @@ PLAYERS = {
         {"name": "Jaroslav Zelený",     "position": "Verdediger"},
         {"name": "David Zima",          "position": "Verdediger"},
         # Middenvelders
-        {"name": "Pavel Bucha",         "position": "Middenvelder"},
         {"name": "Lukáš Červ",          "position": "Middenvelder"},
         {"name": "Vladimír Darida",     "position": "Middenvelder"},
-        {"name": "Tomáš Ladra",         "position": "Middenvelder"},
         {"name": "Lukáš Provod",        "position": "Middenvelder"},
         {"name": "Michal Sadílek",      "position": "Middenvelder"},
         {"name": "Hugo Sochůrek",       "position": "Middenvelder"},
@@ -127,7 +124,6 @@ PLAYERS = {
         {"name": "Adam Hložek",         "position": "Aanvaller"},
         {"name": "Tomáš Chorý",         "position": "Aanvaller"},
         {"name": "Mojmír Chytil",       "position": "Aanvaller"},
-        {"name": "Christophe Kabongo",  "position": "Aanvaller"},
         {"name": "Jan Kuchta",          "position": "Aanvaller"},
         {"name": "Patrik Schick",       "position": "Aanvaller"},
     ],
@@ -960,7 +956,6 @@ PLAYERS = {
         {"name": "Marcus Thuram",       "position": "Aanvaller"},
     ],
     "Senegal": [
-        # Voorlopig – er moeten nog 2 spelers afvallen
         # Verdedigers
         {"name": "Krépin Diatta",        "position": "Verdediger"},
         {"name": "Antoine Mendy",        "position": "Verdediger"},
@@ -968,10 +963,8 @@ PLAYERS = {
         {"name": "El Hadji Malick Diouf","position": "Verdediger"},
         {"name": "Mamadou Sarr",         "position": "Verdediger"},
         {"name": "Moussa Niakhaté",      "position": "Verdediger"},
-        {"name": "Moustapha Mbow",       "position": "Verdediger"},
         {"name": "Abdoulaye Seck",       "position": "Verdediger"},
         {"name": "Ismaïl Jakobs",        "position": "Verdediger"},
-        {"name": "Ilay Camara",          "position": "Verdediger"},
         # Middenvelders
         {"name": "Idrissa Gana Gueye",  "position": "Middenvelder"},
         {"name": "Pape Gueye",          "position": "Middenvelder"},
@@ -986,6 +979,9 @@ PLAYERS = {
         {"name": "Iliman Ndiaye",        "position": "Aanvaller"},
         {"name": "Assane Diao",          "position": "Aanvaller"},
         {"name": "Ibrahim Mbaye",        "position": "Aanvaller"},
+        {"name": "Nicolas Jackson",      "position": "Aanvaller"},
+        {"name": "Bamba Dieng",          "position": "Aanvaller"},
+        {"name": "Cherif Ndiaye",        "position": "Aanvaller"},
     ],
     "Noorwegen": [
         # Verdedigers

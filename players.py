@@ -1061,7 +1061,7 @@ PLAYERS = {
         {"name": "Enzo Fernandez",         "position": "Middenvelder"},
         # Aanvallers
         {"name": "Lionel Messi",           "position": "Aanvaller"},
-        {"name": "Julian Álvarez",         "position": "Aanvaller"},
+        {"name": "Julián Álvarez",         "position": "Aanvaller"},
         {"name": "Nicolás González",       "position": "Aanvaller"},
         {"name": "Thiago Almada",          "position": "Aanvaller"},
         {"name": "Giuliano Simeone",       "position": "Aanvaller"},

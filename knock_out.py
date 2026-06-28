@@ -358,9 +358,9 @@ st.markdown(f"""
 <div class='welcome-card'>
     <h3>👋 Hallo <span style='color:#f5b841'>{name.strip()}</span>!</h3>
     <p style='color:#8893a8;font-size:0.88rem;margin-top:0.3rem'>
-        Voorspel de uitslag van elke wedstrijd <strong style='color:#cdd5e3'>na 90 minuten</strong>.
-        Bij gelijke stand gaat een wedstrijd door naar verlenging en eventueel strafschoppen —
-        maar jij voorspelt alleen de reguliere 90 minuten.<br>
+        Voorspel de uitslag van elke wedstrijd <strong style='color:#cdd5e3'>na maximaal 120 minuten</strong>.
+        Bij gelijke stand na 90 minuten gaat de wedstrijd door naar verlenging.
+        Jij voorspelt de stand na de verlenging (120 min), niet na strafschoppen.<br>
         <strong style='color:#f5b841'>Exacte uitslag = 30 pt &nbsp;·&nbsp; Juiste winnaar = 20 pt</strong>
     </p>
 </div>

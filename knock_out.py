@@ -361,7 +361,7 @@ st.markdown(f"""
         Voorspel de uitslag van elke wedstrijd <strong style='color:#cdd5e3'>na 90 minuten</strong>.
         Bij gelijke stand gaat een wedstrijd door naar verlenging en eventueel strafschoppen —
         maar jij voorspelt alleen de reguliere 90 minuten.<br>
-        <strong style='color:#f5b841'>Exacte uitslag = 15 pt &nbsp;·&nbsp; Juiste winnaar = 10 pt</strong>
+        <strong style='color:#f5b841'>Exacte uitslag = 30 pt &nbsp;·&nbsp; Juiste winnaar = 20 pt</strong>
     </p>
 </div>
 """, unsafe_allow_html=True)
@@ -454,7 +454,8 @@ ko_extras = st.session_state["ko_extras"]
 saved_ts = ko_extras.get("topscorers") or []
 saved_ts = (saved_ts + [{"team": "", "name": ""} for _ in range(TOPSCORER_SLOTS)])[:TOPSCORER_SLOTS]
 
-countries = ["— kies land —"] + sorted(PLAYERS.keys())
+ko_teams = sorted({m["home"] for m in MATCHES_KO} | {m["away"] for m in MATCHES_KO})
+countries = ["— kies land —"] + ko_teams
 new_topscorers = []
 for i in range(TOPSCORER_SLOTS):
     saved = saved_ts[i] if i < len(saved_ts) else {"team": "", "name": ""}

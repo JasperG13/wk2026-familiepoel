@@ -7,28 +7,20 @@ from players import PLAYERS
 from utils import send_predictions_email, flag_img, encode_predictions, decode_predictions
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-ROUND_NAME = "Ronde van 32"
+ROUND_NAME = "Achtste Finale"
 
 MATCHES_KO = [
-    {"id":  1, "home": "Zuid-Afrika",        "away": "Canada",              "date": "28 jun", "time": "21:00"},
-    {"id":  2, "home": "Brazilië",            "away": "Japan",               "date": "29 jun", "time": "19:00"},
-    {"id":  3, "home": "Duitsland",           "away": "Paraguay",            "date": "29 jun", "time": "22:30"},
-    {"id":  4, "home": "Nederland",           "away": "Marokko",             "date": "30 jun", "time": "03:00"},
-    {"id":  5, "home": "Ivoorkust",           "away": "Noorwegen",           "date": "30 jun", "time": "19:00"},
-    {"id":  6, "home": "Frankrijk",           "away": "Zweden",              "date": "30 jun", "time": "23:00"},
-    {"id":  7, "home": "Mexico",              "away": "Ecuador",             "date": "1 jul",  "time": "03:00"},
-    {"id":  8, "home": "Engeland",            "away": "DR Congo",            "date": "1 jul",  "time": "18:00"},
-    {"id":  9, "home": "België",              "away": "Senegal",             "date": "1 jul",  "time": "22:00"},
-    {"id": 10, "home": "USA",                 "away": "Bosnië-Herzegovina",  "date": "2 jul",  "time": "02:00"},
-    {"id": 11, "home": "Spanje",              "away": "Oostenrijk",          "date": "2 jul",  "time": "21:00"},
-    {"id": 12, "home": "Portugal",            "away": "Kroatië",             "date": "3 jul",  "time": "01:00"},
-    {"id": 13, "home": "Zwitserland",         "away": "Algerije",            "date": "3 jul",  "time": "05:00"},
-    {"id": 14, "home": "Australië",           "away": "Egypte",              "date": "3 jul",  "time": "20:00"},
-    {"id": 15, "home": "Argentinië",          "away": "Kaapverdië",          "date": "4 jul",  "time": "00:00"},
-    {"id": 16, "home": "Colombia",            "away": "Ghana",               "date": "4 jul",  "time": "03:30"},
+    {"id":  1, "home": "Canada",      "away": "Marokko",    "date": "4 jul",  "time": "19:00"},
+    {"id":  2, "home": "Paraguay",    "away": "Frankrijk",  "date": "4 jul",  "time": "23:00"},
+    {"id":  3, "home": "Brazilië",    "away": "Noorwegen",  "date": "5 jul",  "time": "22:00"},
+    {"id":  4, "home": "Mexico",      "away": "Engeland",   "date": "6 jul",  "time": "02:00"},
+    {"id":  5, "home": "Portugal",    "away": "Spanje",     "date": "6 jul",  "time": "21:00"},
+    {"id":  6, "home": "USA",         "away": "België",     "date": "7 jul",  "time": "02:00"},
+    {"id":  7, "home": "Argentinië",  "away": "Egypte",     "date": "7 jul",  "time": "18:00"},
+    {"id":  8, "home": "Zwitserland", "away": "Colombia",   "date": "7 jul",  "time": "22:00"},
 ]
 
-TOPSCORER_SLOTS = 4
+TOPSCORER_SLOTS = 3
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 
@@ -332,7 +324,7 @@ st.markdown(f"""
     <div class='hero-badge'>⚽ FIFA World Cup · 2026 · Knock-out</div>
     <h1>WK 2026 Familiepoel</h1>
     <p class='hero-sub'>
-        🏆 <strong>{ROUND_NAME}</strong> &nbsp;·&nbsp; 28 juni – 4 juli
+        🏆 <strong>{ROUND_NAME}</strong> &nbsp;·&nbsp; 4 – 7 juli
     </p>
 </div>
 """, unsafe_allow_html=True)
@@ -445,8 +437,8 @@ for i in range(0, len(MATCHES_KO), 2):
 
 # ── Topscorer picks ────────────────────────────────────────────────────────────
 st.divider()
-st.markdown("## ⚽ Topscorers (kies 4)")
-st.caption("Kies 4 spelers waarvan jij denkt dat ze het meest scoren in de knock-outfase.")
+st.markdown("## ⚽ Topscorers (kies 3)")
+st.caption("Kies 3 spelers waarvan jij denkt dat ze het meest scoren in de achtste finales.")
 
 ko_extras = st.session_state["ko_extras"]
 saved_ts = ko_extras.get("topscorers") or []
@@ -551,7 +543,7 @@ with col_export:
     st.download_button(
         label="📤 Download (.json)",
         data=json_str,
-        file_name=f"knockout_r32_{name.strip().replace(' ', '_')}.json",
+        file_name=f"knockout_r16_{name.strip().replace(' ', '_')}.json",
         mime="application/json",
         use_container_width=True,
     )

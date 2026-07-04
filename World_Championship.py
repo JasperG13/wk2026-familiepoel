@@ -351,7 +351,7 @@ st.markdown(f"""
     <h3>👋 Hallo <span style='color:#f5b841'>{name.strip()}</span>!</h3>
     <p style='color:#8893a8;font-size:0.88rem;margin-top:0.3rem'>
         Voorspel de uitslag van elke wedstrijd <strong style='color:#cdd5e3'>na max 120 minuten</strong>.<br>
-        <strong style='color:#f5b841'>Exacte uitslag = 30 pt &nbsp;·&nbsp; Juiste winnaar = 20 pt</strong>
+        <strong style='color:#f5b841'>Exacte uitslag = 45 pt &nbsp;·&nbsp; Juiste winnaar = 30 pt</strong>
     </p>
 </div>
 """, unsafe_allow_html=True)

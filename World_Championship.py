@@ -7,17 +7,13 @@ from players import PLAYERS
 from utils import send_predictions_email, flag_img, encode_predictions, decode_predictions
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-ROUND_NAME = "Achtste Finale"
+ROUND_NAME = "Kwartfinale"
 
 MATCHES_KO = [
-    {"id":  1, "home": "Canada",      "away": "Marokko",    "date": "4 jul",  "time": "19:00"},
-    {"id":  2, "home": "Paraguay",    "away": "Frankrijk",  "date": "4 jul",  "time": "23:00"},
-    {"id":  3, "home": "Brazilië",    "away": "Noorwegen",  "date": "5 jul",  "time": "22:00"},
-    {"id":  4, "home": "Mexico",      "away": "Engeland",   "date": "6 jul",  "time": "02:00"},
-    {"id":  5, "home": "Portugal",    "away": "Spanje",     "date": "6 jul",  "time": "21:00"},
-    {"id":  6, "home": "USA",         "away": "België",     "date": "7 jul",  "time": "02:00"},
-    {"id":  7, "home": "Argentinië",  "away": "Egypte",     "date": "7 jul",  "time": "18:00"},
-    {"id":  8, "home": "Zwitserland", "away": "Colombia",   "date": "7 jul",  "time": "22:00"},
+    {"id":  1, "home": "Frankrijk",   "away": "Marokko",     "date": "9 jul",  "time": "22:00"},
+    {"id":  2, "home": "Spanje",      "away": "België",      "date": "10 jul", "time": "21:00"},
+    {"id":  3, "home": "Noorwegen",   "away": "Engeland",    "date": "11 jul", "time": "23:00"},
+    {"id":  4, "home": "Argentinië",  "away": "Zwitserland", "date": "12 jul", "time": "03:00"},
 ]
 
 TOPSCORER_SLOTS = 3
@@ -324,7 +320,7 @@ st.markdown(f"""
     <div class='hero-badge'>⚽ FIFA World Cup · 2026 · Knock-out</div>
     <h1>WK 2026 Familiepoel</h1>
     <p class='hero-sub'>
-        🏆 <strong>{ROUND_NAME}</strong> &nbsp;·&nbsp; 4 – 7 juli
+        🏆 <strong>{ROUND_NAME}</strong> &nbsp;·&nbsp; 9 – 12 juli
     </p>
 </div>
 """, unsafe_allow_html=True)
@@ -351,7 +347,7 @@ st.markdown(f"""
     <h3>👋 Hallo <span style='color:#f5b841'>{name.strip()}</span>!</h3>
     <p style='color:#8893a8;font-size:0.88rem;margin-top:0.3rem'>
         Voorspel de uitslag van elke wedstrijd <strong style='color:#cdd5e3'>na max 120 minuten</strong>.<br>
-        <strong style='color:#f5b841'>Exacte uitslag = 45 pt &nbsp;·&nbsp; Juiste winnaar = 30 pt</strong>
+        <strong style='color:#f5b841'>Exacte uitslag = 90 pt &nbsp;·&nbsp; Juiste winnaar = 60 pt</strong>
     </p>
 </div>
 """, unsafe_allow_html=True)
@@ -438,7 +434,7 @@ for i in range(0, len(MATCHES_KO), 2):
 # ── Topscorer picks ────────────────────────────────────────────────────────────
 st.divider()
 st.markdown("## ⚽ Topscorers (kies 3)")
-st.caption("Kies 3 spelers waarvan jij denkt dat ze het meest scoren in de achtste finales.")
+st.caption("Kies 3 spelers waarvan jij denkt dat ze het meest scoren in de kwartfinales.")
 
 ko_extras = st.session_state["ko_extras"]
 saved_ts = ko_extras.get("topscorers") or []
@@ -543,7 +539,7 @@ with col_export:
     st.download_button(
         label="📤 Download (.json)",
         data=json_str,
-        file_name=f"knockout_r16_{name.strip().replace(' ', '_')}.json",
+        file_name=f"knockout_qf_{name.strip().replace(' ', '_')}.json",
         mime="application/json",
         use_container_width=True,
     )

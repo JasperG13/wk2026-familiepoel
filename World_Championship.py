@@ -16,7 +16,7 @@ MATCHES_KO = [
     {"id":  4, "home": "Argentinië",  "away": "Zwitserland", "date": "12 jul", "time": "03:00"},
 ]
 
-TOPSCORER_SLOTS = 3
+TOPSCORER_SLOTS = 2
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 
@@ -433,8 +433,8 @@ for i in range(0, len(MATCHES_KO), 2):
 
 # ── Topscorer picks ────────────────────────────────────────────────────────────
 st.divider()
-st.markdown("## ⚽ Topscorers (kies 3)")
-st.caption("Kies 3 spelers waarvan jij denkt dat ze het meest scoren in de kwartfinales.")
+st.markdown("## ⚽ Topscorers (kies 2)")
+st.caption("Kies 2 spelers waarvan jij denkt dat ze het meest scoren in de kwartfinales.")
 
 ko_extras = st.session_state["ko_extras"]
 saved_ts = ko_extras.get("topscorers") or []

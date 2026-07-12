@@ -71,6 +71,18 @@ ACTUAL_RESULTS = {
     36: (1, 1),  # Japan - Zweden
     23: (3, 2),  # Turkije - USA
     24: (0, 0),  # Paraguay - Australië
+    41: (1, 5),  # Nieuw-Zeeland - België
+    42: (1, 1),  # Egypte - Iran
+    47: (0, 0),  # Kaapverdië - Saudi-Arabië
+    48: (0, 1),  # Uruguay - Spanje
+    53: (1, 4),  # Noorwegen - Frankrijk
+    54: (5, 0),  # Senegal - Irak
+    59: (3, 3),  # Algerije - Oostenrijk
+    60: (1, 3),  # Jordanië - Argentinië
+    65: (0, 0),  # Colombia - Portugal
+    66: (3, 1),  # DR Congo - Oezbekistan
+    71: (0, 2),  # Panama - Engeland
+    72: (2, 1),  # Kroatië - Ghana
 }
 
 ACTUAL_GROUP_STANDINGS = {
@@ -133,30 +145,40 @@ GOALS_BY_PLAYER = {
     ("Egypte",              "Mostafa Ziko"):        {40: 1},
     ("Egypte",              "Mohamed Salah"):       {40: 1},
     ("Egypte",              "Mahmoud Trézéguet"):   {40: 1},
-    ("Iran",                "Ramin Rezaiyan"):      {38: 1},
+    ("Iran",                "Ramin Rezaiyan"):      {38: 1, 42: 1},
     ("Iran",                "Mohammed Mohebbi"):    {38: 1},
-    ("Nieuw-Zeeland",       "Eli Just"):             {38: 2},
+    ("Nieuw-Zeeland",       "Eli Just"):             {38: 2, 41: 1},
     ("Nieuw-Zeeland",       "Finn Surman"):          {40: 1},
     ("Saudi-Arabië",        "Abdulelah Al Amri"):   {44: 1},
     ("Uruguay",             "Maximiliano Araújo"):  {44: 1, 46: 1},
     ("Uruguay",             "Agustín Canobbio"):    {46: 1},
     ("Frankrijk",           "Kylian Mbappé"):       {49: 2, 51: 2},
     ("Frankrijk",           "Bradley Barcola"):     {49: 1},
-    ("Frankrijk",           "Ousmane Dembélé"):     {51: 1},
+    ("Frankrijk",           "Ousmane Dembélé"):     {51: 1, 53: 3},
+    ("Frankrijk",           "Désiré Doué"):         {53: 1},
     ("Senegal",             "Ibrahim Mbaye"):       {49: 1},
-    ("Senegal",             "Ismaïla Sarr"):        {52: 2},
+    ("Senegal",             "Ismaïla Sarr"):        {52: 2, 54: 1},
+    ("Senegal",             "Habib Diarra"):        {54: 1},
+    ("Senegal",             "Pape Gueye"):           {54: 2},
+    ("Senegal",             "Iliman Ndiaye"):        {54: 1},
     ("Noorwegen",           "Erling Haaland"):      {50: 2, 52: 2},
     ("Noorwegen",           "Marcus Holmgren Pedersen"): {52: 1},
     ("Noorwegen",           "Leo Skiri Østigård"):  {50: 1},
     ("Noorwegen",           "Kristian Thorstvedt"):{50: 1},
     ("Irak",                "Aymen Hussein"):       {50: 1},
-    ("Argentinië",          "Lionel Messi"):        {55: 3, 57: 2},
+    ("Argentinië",          "Lionel Messi"):        {55: 3, 57: 2, 60: 1},
+    ("Argentinië",          "Giovani Lo Celso"):     {60: 1},
+    ("Argentinië",          "Lautaro Martinez"):     {60: 1},
     ("Oostenrijk",          "Romano Schmid"):       {56: 1},
-    ("Oostenrijk",          "Marko Arnautovic"):    {56: 1},
+    ("Oostenrijk",          "Marko Arnautovic"):    {56: 1, 59: 1},
     ("Jordanië",            "Ali Olwan"):           {56: 1},
     ("Jordanië",            "Nizar Al Rashdan"):    {58: 1},
+    ("Jordanië",            "Mousa Al Tamari"):      {60: 1},
     ("Algerije",            "Nadir Benbouali"):     {58: 1},
     ("Algerije",            "Amine Gouiri"):        {58: 1},
+    ("Algerije",            "Rafik Belghali"):       {59: 1},
+    ("Algerije",            "Riyad Mahrez"):         {59: 2},
+    ("Oostenrijk",          "Marcel Sabitzer"):      {59: 1},
     ("Tsjechië",            "Michal Sadílek"):      {3: 1},
     ("Zuid-Afrika",         "Teboho Mokoena"):      {3: 1},
     ("Mexico",              "Luis Romo"):            {4: 1},
@@ -167,16 +189,27 @@ GOALS_BY_PLAYER = {
     ("Canada",              "Jonathan David"):       {10: 3},
     ("Canada",              "Nathan Saliba"):        {10: 1},
     ("Portugal",            "João Neves"):          {61: 1},
-    ("DR Congo",            "Yoane Wissa"):         {61: 1},
+    ("DR Congo",            "Yoane Wissa"):         {61: 1, 66: 2},
+    ("DR Congo",            "Fiston Mayele"):        {66: 1},
+    ("Oezbekistan",         "Eldor Shomurodov"):     {66: 1},
     ("Colombia",            "Daniel Muñoz"):        {62: 1, 64: 1},
     ("Colombia",            "Luis Díaz"):           {62: 1},
     ("Colombia",            "Jaminton Campaz"):     {62: 1},
     ("Oezbekistan",         "Abbosbek Fayzullaev"):{62: 1},
-    ("Engeland",            "Harry Kane"):          {67: 2},
-    ("Engeland",            "Jude Bellingham"):     {67: 1},
+    ("Engeland",            "Harry Kane"):          {67: 2, 71: 1},
+    ("Engeland",            "Jude Bellingham"):     {67: 1, 71: 1},
     ("Engeland",            "Marcus Rashford"):     {67: 1},
     ("Kroatië",             "Martin Baturina"):     {67: 1},
     ("Ghana",               "Caleb Yirenkyi"):      {68: 1},
+    ("België",              "Leandro Trossard"):    {41: 2},
+    ("België",              "Kevin De Bruyne"):     {41: 1},
+    ("België",              "Romelu Lukaku"):       {41: 1},
+    ("België",              "Alexis Saelemaekers"): {41: 1},
+    ("Egypte",              "Mahmoud Saber"):       {42: 1},
+    ("Spanje",              "Álex Baena"):           {48: 1},
+    ("Noorwegen",           "Thelo Aasgaard"):      {53: 1},
+    ("Kroatië",             "Petar Sucic"):          {72: 1},
+    ("Kroatië",             "Nikola Vlasic"):        {72: 1},
     ("Portugal",            "Cristiano Ronaldo"):   {63: 2},
     ("Portugal",            "Nuno Mendes"):         {63: 1},
     ("Portugal",            "Rafael Leão"):         {63: 1},

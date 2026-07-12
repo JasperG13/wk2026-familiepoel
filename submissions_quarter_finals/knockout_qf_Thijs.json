@@ -1,0 +1,41 @@
+{
+  "naam": "Thijs",
+  "ronde": "Kwartfinale",
+  "datum": "2026-07-09",
+  "topscorers": [
+    {
+      "team": "Argentinië",
+      "name": "Lionel Messi"
+    },
+    {
+      "team": "Noorwegen",
+      "name": "Erling Haaland"
+    }
+  ],
+  "voorspellingen": {
+    "1": {
+      "thuis": "Frankrijk",
+      "uit": "Marokko",
+      "score_thuis": 2,
+      "score_uit": 1
+    },
+    "2": {
+      "thuis": "Spanje",
+      "uit": "België",
+      "score_thuis": 2,
+      "score_uit": 1
+    },
+    "3": {
+      "thuis": "Noorwegen",
+      "uit": "Engeland",
+      "score_thuis": 2,
+      "score_uit": 2
+    },
+    "4": {
+      "thuis": "Argentinië",
+      "uit": "Zwitserland",
+      "score_thuis": 3,
+      "score_uit": 1
+    }
+  }
+}

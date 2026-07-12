@@ -1,0 +1,41 @@
+{
+  "naam": "Caroline Vernooij",
+  "ronde": "Kwartfinale",
+  "datum": "2026-07-09",
+  "topscorers": [
+    {
+      "team": "Frankrijk",
+      "name": "Kylian Mbappé"
+    },
+    {
+      "team": "Engeland",
+      "name": "Harry Kane"
+    }
+  ],
+  "voorspellingen": {
+    "1": {
+      "thuis": "Frankrijk",
+      "uit": "Marokko",
+      "score_thuis": 2,
+      "score_uit": 1
+    },
+    "2": {
+      "thuis": "Spanje",
+      "uit": "België",
+      "score_thuis": 2,
+      "score_uit": 1
+    },
+    "3": {
+      "thuis": "Noorwegen",
+      "uit": "Engeland",
+      "score_thuis": 1,
+      "score_uit": 3
+    },
+    "4": {
+      "thuis": "Argentinië",
+      "uit": "Zwitserland",
+      "score_thuis": 2,
+      "score_uit": 0
+    }
+  }
+}

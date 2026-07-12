@@ -7,13 +7,11 @@ from players import PLAYERS
 from utils import send_predictions_email, flag_img, encode_predictions, decode_predictions
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-ROUND_NAME = "Kwartfinale"
+ROUND_NAME = "Halve Finale"
 
 MATCHES_KO = [
-    {"id":  1, "home": "Frankrijk",   "away": "Marokko",     "date": "9 jul",  "time": "22:00"},
-    {"id":  2, "home": "Spanje",      "away": "België",      "date": "10 jul", "time": "21:00"},
-    {"id":  3, "home": "Noorwegen",   "away": "Engeland",    "date": "11 jul", "time": "23:00"},
-    {"id":  4, "home": "Argentinië",  "away": "Zwitserland", "date": "12 jul", "time": "03:00"},
+    {"id":  1, "home": "Frankrijk",  "away": "Spanje",      "date": "14 jul", "time": "21:00"},
+    {"id":  2, "home": "Engeland",   "away": "Argentinië",  "date": "15 jul", "time": "21:00"},
 ]
 
 TOPSCORER_SLOTS = 2
@@ -320,7 +318,7 @@ st.markdown(f"""
     <div class='hero-badge'>⚽ FIFA World Cup · 2026 · Knock-out</div>
     <h1>WK 2026 Familiepoel</h1>
     <p class='hero-sub'>
-        🏆 <strong>{ROUND_NAME}</strong> &nbsp;·&nbsp; 9 – 12 juli
+        🏆 <strong>{ROUND_NAME}</strong> &nbsp;·&nbsp; 14 – 15 juli
     </p>
 </div>
 """, unsafe_allow_html=True)
@@ -347,7 +345,7 @@ st.markdown(f"""
     <h3>👋 Hallo <span style='color:#f5b841'>{name.strip()}</span>!</h3>
     <p style='color:#8893a8;font-size:0.88rem;margin-top:0.3rem'>
         Voorspel de uitslag van elke wedstrijd <strong style='color:#cdd5e3'>na max 120 minuten</strong>.<br>
-        <strong style='color:#f5b841'>Exacte uitslag = 90 pt &nbsp;·&nbsp; Juiste winnaar = 60 pt</strong>
+        <strong style='color:#f5b841'>Exacte uitslag = 180 pt &nbsp;·&nbsp; Juiste winnaar = 120 pt</strong>
     </p>
 </div>
 """, unsafe_allow_html=True)
@@ -434,7 +432,7 @@ for i in range(0, len(MATCHES_KO), 2):
 # ── Topscorer picks ────────────────────────────────────────────────────────────
 st.divider()
 st.markdown("## ⚽ Topscorers (kies 2)")
-st.caption("Kies 2 spelers waarvan jij denkt dat ze het meest scoren in de kwartfinales.")
+st.caption("Kies 2 spelers waarvan jij denkt dat ze het meest scoren in de halve finales. Punten per goal tellen dubbel t.o.v. de kwartfinale.")
 
 ko_extras = st.session_state["ko_extras"]
 saved_ts = ko_extras.get("topscorers") or []
@@ -539,7 +537,7 @@ with col_export:
     st.download_button(
         label="📤 Download (.json)",
         data=json_str,
-        file_name=f"knockout_qf_{name.strip().replace(' ', '_')}.json",
+        file_name=f"knockout_sf_{name.strip().replace(' ', '_')}.json",
         mime="application/json",
         use_container_width=True,
     )
@@ -556,7 +554,7 @@ with col_submit:
                 with st.spinner("Bezig met versturen..."):
                     send_predictions_email(name.strip(), json_str)
                 st.session_state["ko_submitted"] = True
-                st.success(f"🎉 Bedankt **{name.strip()}**! Je knock-out voorspellingen zijn verstuurd.")
+                st.success(f"🎉 Bedankt **{name.strip()}**! Je halve finale voorspellingen zijn verstuurd.")
                 st.balloons()
             except Exception as e:
                 st.error(f"❌ Versturen mislukt: {e}")
@@ -570,6 +568,6 @@ st.caption(
 
 st.markdown("""
 <div class='footer'>
-    WK 2026 Familiepoel · Knock-out stage · Gemaakt met <span class='heart'>♥</span> · Veel succes! ⚽🏆
+    WK 2026 Familiepoel · Halve finale · Gemaakt met <span class='heart'>♥</span> · Veel succes! ⚽🏆
 </div>
 """, unsafe_allow_html=True)

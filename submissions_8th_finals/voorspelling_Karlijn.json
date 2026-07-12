@@ -1,0 +1,69 @@
+{
+  "naam": "Karlijn",
+  "ronde": "Achtste Finale",
+  "datum": "2026-07-04",
+  "topscorers": [
+    {
+      "team": "Marokko",
+      "name": "Ismael Saibari"
+    },
+    {
+      "team": "Argentinië",
+      "name": "Lautaro Martinez"
+    },
+    {
+      "team": "Engeland",
+      "name": "Harry Kane"
+    }
+  ],
+  "voorspellingen": {
+    "1": {
+      "thuis": "Canada",
+      "uit": "Marokko",
+      "score_thuis": 0,
+      "score_uit": 2
+    },
+    "2": {
+      "thuis": "Paraguay",
+      "uit": "Frankrijk",
+      "score_thuis": 1,
+      "score_uit": 3
+    },
+    "3": {
+      "thuis": "Brazilië",
+      "uit": "Noorwegen",
+      "score_thuis": 2,
+      "score_uit": 1
+    },
+    "4": {
+      "thuis": "Mexico",
+      "uit": "Engeland",
+      "score_thuis": 1,
+      "score_uit": 1
+    },
+    "5": {
+      "thuis": "Portugal",
+      "uit": "Spanje",
+      "score_thuis": 1,
+      "score_uit": 2
+    },
+    "6": {
+      "thuis": "USA",
+      "uit": "België",
+      "score_thuis": 0,
+      "score_uit": 1
+    },
+    "7": {
+      "thuis": "Argentinië",
+      "uit": "Egypte",
+      "score_thuis": 3,
+      "score_uit": 1
+    },
+    "8": {
+      "thuis": "Zwitserland",
+      "uit": "Colombia",
+      "score_thuis": 2,
+      "score_uit": 0
+    }
+  }
+}
